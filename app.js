@@ -75,9 +75,13 @@ function moveEverything() {
         if (ballY > paddle1Y &&
             ballY < paddle1Y + PADDLE_HEIGHT) {
             ballSpeedX = -ballSpeedX;
+
+            var deltaY = ballY
+                - (paddle1Y + PADDLE_HEIGHT / 2);
+            ballSpeedY = deltaY * 0.35;
         } else {
             ballReset();
-            player1Score++;
+            player2Score++;
             // ballSpeedX = -ballSpeedX;
         }
     }
@@ -87,9 +91,13 @@ function moveEverything() {
         if (ballY > paddle2Y &&
             ballY < paddle2Y + PADDLE_HEIGHT) {
             ballSpeedX = -ballSpeedX;
+
+            var deltaY = ballY
+                - (paddle2Y + PADDLE_HEIGHT / 2);
+            ballSpeedY = deltaY * 0.35;
         } else {
             ballReset()
-            player2Score++;
+            player1Score++;
             // ballSpeedX = -ballSpeedX;
         }
     }
